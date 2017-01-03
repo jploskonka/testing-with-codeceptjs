@@ -1,0 +1,7 @@
+{
+  "name": "acceptance-testing-with-codecept-js",
+  "version": "1.0.0",
+  "description": "Example code for http://codenroll.it/acceptance-testing-with-codecept-js/ article",
+  "author": "Jakub Ploskonka",
+  "license": "MIT"
+}
