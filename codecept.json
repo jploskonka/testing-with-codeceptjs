@@ -5,6 +5,7 @@
   "helpers": {
     "Nightmare": {
       "url": "http://todomvc.com/examples/vanillajs",
+      "show": true,
       "webPreferences": {
         "partition": "nopersist"
       }
