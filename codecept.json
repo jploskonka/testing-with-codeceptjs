@@ -1,0 +1,14 @@
+{
+  "tests": "tests/**/*_test.js",
+  "timeout": 10000,
+  "output": "./output",
+  "helpers": {
+    "Nightmare": {
+      "url": "http://todomvc.com/examples/vanillajs"
+    }
+  },
+  "include": {},
+  "bootstrap": false,
+  "mocha": {},
+  "name": "acceptance-testing-with-codecept-js"
+}
