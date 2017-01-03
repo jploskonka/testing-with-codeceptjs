@@ -4,7 +4,10 @@
   "output": "./output",
   "helpers": {
     "Nightmare": {
-      "url": "http://todomvc.com/examples/vanillajs"
+      "url": "http://todomvc.com/examples/vanillajs",
+      "webPreferences": {
+        "partition": "nopersist"
+      }
     }
   },
   "include": {},
