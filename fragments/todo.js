@@ -23,5 +23,9 @@ module.exports = {
     // fillField does not accept a scoping argument :(
     I.fillField('.todo-list .edit', newContent);
     I.pressKey('Enter');
+  },
+
+  toggle() {
+    I.click('.toggle')
   }
 }
