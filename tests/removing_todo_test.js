@@ -6,5 +6,5 @@ Scenario('User removes todo', (I, todoFragment) => {
   I.amOnPage('/');
   todoFragment.add(todoContent);
   todoFragment.remove();
-  I.dontSee(todoContent);
+  I.dontSee(todoContent, '.todo-list');
 });
