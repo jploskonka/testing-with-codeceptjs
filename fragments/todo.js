@@ -10,5 +10,9 @@ module.exports = {
   add(content) {
     I.fillField('.new-todo', content);
     I.pressKey('Enter');
+  },
+
+  remove() {
+    I.click('.destroy')
   }
 }
