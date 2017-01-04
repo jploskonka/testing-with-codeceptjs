@@ -5,5 +5,5 @@ Scenario('User adds a new todo', (I, todoFragment) => {
 
   I.amOnPage('/');
   todoFragment.add(todoContent);
-  I.see(todoContent, '.todo-list');
+  I.see(todoContent);
 });
