@@ -9,6 +9,9 @@
       "webPreferences": {
         "partition": "nopersist"
       }
+    },
+    "PageHelper": {
+      "require": "helpers/page_helper.js"
     }
   },
   "include": {
