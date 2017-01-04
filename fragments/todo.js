@@ -13,6 +13,15 @@ module.exports = {
   },
 
   remove() {
-    I.click('.destroy')
+    I.click('.destroy');
+  },
+
+  edit(oldContent, newContent) {
+    I.doubleClick(oldContent);
+    // YAY, I can use exepctations in page fragments!
+    I.seeElement('input.edit', '.todo-list');
+    // fillField does not accept a scoping argument :(
+    I.fillField('.todo-list .edit', newContent);
+    I.pressKey('Enter');
   }
 }
