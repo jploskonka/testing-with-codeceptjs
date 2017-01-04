@@ -1,4 +1,4 @@
-Feature('Adding todo');
+Feature('Add todo');
 
 Scenario('User adds a new todo', (I, todoFragment) => {
   const todoContent = 'Learn testing with CodeceptJS';

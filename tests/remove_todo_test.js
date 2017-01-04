@@ -1,4 +1,4 @@
-Feature('Removing todo');
+Feature('Remove todo');
 
 Scenario('User removes todo', (I, todoFragment) => {
   const todoContent = 'Learn testing with CodeceptJS';
