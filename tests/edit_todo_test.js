@@ -10,4 +10,7 @@ Scenario('User edits todo', (I, todoFragment) => {
 
   I.dontSee(oldContent, '.todo-list');
   I.see(newContent, '.todo-list');
+
+  I.refreshPage();
+  I.waitForText(newContent, '.todo-list');
 });
