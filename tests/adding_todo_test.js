@@ -1,10 +1,9 @@
 Feature('Adding todo');
 
-Scenario('User adds a new todo', (I) => {
+Scenario('User adds a new todo', (I, todoFragment) => {
   const todoContent = 'Learn testing with CodeceptJS';
 
   I.amOnPage('/');
-  I.fillField('.new-todo', todoContent);
-  I.pressKey('Enter');
+  todoFragment.add(todoContent);
   I.see(todoContent, '.todo-list');
 });

@@ -11,7 +11,9 @@
       }
     }
   },
-  "include": {},
+  "include": {
+    "todoFragment": "./fragments/todo.js"
+  },
   "bootstrap": false,
   "mocha": {},
   "name": "acceptance-testing-with-codecept-js"
