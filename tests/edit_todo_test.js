@@ -6,7 +6,7 @@ Scenario('User edits todo', (I, todoFragment) => {
 
   I.amOnPage('/');
   todoFragment.add(oldContent);
-  todoFragment.edit(oldContent, newContent);
+  todoFragment.edit(1, newContent);
 
   I.dontSee(oldContent, '.todo-list');
   I.see(newContent, '.todo-list');
