@@ -1,4 +1,4 @@
-Feature('State togglers');
+Feature('State togglers')
 
 const todoContent = 'Learn testing with CodeceptJS';
 
@@ -8,29 +8,33 @@ Before((I, todoFragment) => {
 });
 
 Scenario('User marks todo as done', (I, todoFragment) => {
-  todoFragment.toggle();
+  const context = todoFragment.todoEl(1);
 
-  I.seeCheckboxIsChecked('.toggle');
+  todoFragment.toggle(1);
+
+  I.seeCheckboxIsChecked('.toggle', context);
 
   I.refreshPage();
   // Wait for todo to be loaded
-  I.waitForText(todoContent, '.todo-list');
+  I.waitForElement(context);
   // Check toggler
-  I.seeCheckboxIsChecked('.toggle');
+  I.seeCheckboxIsChecked('.toggle', context);
 });
 
 Scenario('User marks todo as undone', (I, todoFragment) => {
+  const context = todoFragment.todoEl(1);
+
   // This .toggle call is part of scenario setup,
   // because adding new todo would result in incomplete one.
-  todoFragment.toggle();
+  todoFragment.toggle(1);
 
   // And now the actual interaction which we want to test
-  todoFragment.toggle();
-  I.dontSeeCheckboxIsChecked('.toggle');
+  todoFragment.toggle(1);
+  I.dontSeeCheckboxIsChecked('.toggle', context);
 
   I.refreshPage();
   // Wait for todo to be loaded
-  I.waitForText(todoContent, '.todo-list');
+  I.waitForElement(context);
   // Check toggler
-  I.dontSeeCheckboxIsChecked('.toggle');
+  I.dontSeeCheckboxIsChecked('.toggle', context);
 });

@@ -7,17 +7,25 @@ module.exports = {
     I = actor();
   },
 
+  todoEl(position) {
+    return `.todo-list > li:nth-child(${position})`;
+  },
+
   add(content) {
     I.fillField('.new-todo', content);
     I.pressKey('Enter');
   },
 
   remove(position) {
-    I.click('.destroy', `.todo-list > li:nth-child(${position})`);
+    I.click('.destroy', this.todoEl(position));
   },
 
   edit(position, newContent) {
-    I.doubleClick(`.todo-list > li:nth-child(${position}) label`);
+    const context = this.todoEl(position);
+
+    // I'm not sure why but using doubleClick with `label` as first
+    // argument and context as second fails :(
+    I.doubleClick(`${context} label`);
 
     // YAY, I can use exepctations in page fragments!
     I.seeElement('input.edit', '.todo-list');
@@ -31,7 +39,7 @@ module.exports = {
     I.pressKey('Enter');
   },
 
-  toggle() {
-    I.click('.toggle')
+  toggle(position) {
+    I.click('.toggle', this.todoEl(position));
   }
 }
