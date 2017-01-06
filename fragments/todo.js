@@ -17,14 +17,14 @@ module.exports = {
   },
 
   remove(position) {
-    I.click('.destroy', this.todoEl(position));
+    I.click(`${this.todoEl(position)} .destroy`);
   },
 
   edit(position, newContent) {
     const context = this.todoEl(position);
 
     // I'm not sure why but using doubleClick with `label` as first
-    // argument and context as second fails :(
+    // argument and context as second just fails :(
     I.doubleClick(`${context} label`);
 
     // YAY, I can use exepctations in page fragments!
@@ -40,6 +40,6 @@ module.exports = {
   },
 
   toggle(position) {
-    I.click('.toggle', this.todoEl(position));
+    I.click(`${this.todoEl(position)} .toggle`);
   }
 }
