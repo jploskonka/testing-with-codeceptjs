@@ -8,6 +8,9 @@
     },
     "PageHelper": {
       "require": "helpers/page_helper.js"
+    },
+    "EnvironmentManager": {
+      "require": "helpers/environment_manager_helper.js"
     }
   },
   "include": {

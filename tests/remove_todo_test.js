@@ -1,10 +1,10 @@
 Feature('Remove todo');
 
-Scenario('User removes todo', (I, todoFragment) => {
-  const todoContent = 'Learn testing with CodeceptJS';
+const TODOS = require('../fixtures/todos.js').todos;
 
-  I.amOnPage('/');
-  todoFragment.add(todoContent);
+Scenario('User removes todo', (I, todoFragment) => {
+  const todoContent = TODOS[0].title;
+
   todoFragment.remove(1);
   I.dontSee(todoContent, '.todo-list');
 
