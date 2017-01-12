@@ -4,6 +4,7 @@ const TODOS = JSON.stringify(require('../fixtures/todos.js'));
 const STORAGE_KEY = 'todos-vanillajs';
 
 function setTodos(todos, storageKey, done) {
+  localStorage.clear();
   localStorage.setItem(storageKey, todos);
   done();
 }

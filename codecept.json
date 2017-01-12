@@ -14,7 +14,7 @@
     }
   },
   "include": {
-    "todoFragment": "./fragments/todo.js"
+    "TodoList": "./pages/TodoList.js"
   },
   "bootstrap": false,
   "mocha": {},
