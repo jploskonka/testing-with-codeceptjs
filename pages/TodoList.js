@@ -13,7 +13,12 @@ module.exports = {
   listEl: () => '.todo-list',
 
   todoEl(position) {
-    return `.todo-list > li:nth-child(${position})`;
+    let el = '.todo-list > li';
+
+    if(position)
+      el = [el, `:nth-child(${position})`].join('');
+
+    return el;
   },
 
   todoContentEl(position) {
@@ -32,6 +37,13 @@ module.exports = {
 
   todoDestroyEl(position) {
     return `${this.todoEl(position)} .destroy`;
+  },
+
+  // Content getters
+  getTodoCount: function* () {
+    return yield I.executeScript(el => {
+      return document.querySelectorAll(el).length;
+    }, this.todoEl());
   },
 
   // Interactions

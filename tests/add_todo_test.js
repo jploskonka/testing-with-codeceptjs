@@ -1,11 +1,20 @@
+const assert = require('assert');
+
 Feature('Add todo');
 
-Scenario('User adds a new todo', (I, TodoList) => {
+Scenario('User adds a new todo', function* (I, TodoList) {
   const todoContent = 'Learn testing with CodeceptJS';
+  const todoCount = yield* TodoList.getTodoCount();
 
   TodoList.add(todoContent);
-  I.see(todoContent, TodoList.listEl());
+
+  const newTodoCount = yield* TodoList.getTodoCount();
+  const lastTodo = TodoList.todoEl(newTodoCount);
+
+  assert.equal(newTodoCount, todoCount + 1);
+
+  I.see(todoContent, lastTodo);
 
   I.refreshPage();
-  I.waitForText(todoContent, 1, TodoList.listEl());
+  I.waitForText(todoContent, 1, lastTodo);
 });
