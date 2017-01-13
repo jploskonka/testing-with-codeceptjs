@@ -11,6 +11,8 @@ module.exports = {
   // Element getters
   newFormEl: () => '.new-todo',
   listEl: () => '.todo-list',
+  activeFilterEl: () => '.filters li:nth-child(2) a',
+  completedFilterEl: () => '.filters li:nth-child(3) a',
 
   todoEl(position) {
     let el = '.todo-list > li';
@@ -65,5 +67,22 @@ module.exports = {
 
   toggle(position) {
     I.click(this.todoToggleEl(position));
+  },
+
+  selectCompleted() {
+    I.click(this.completedFilterEl());
+  },
+
+  selectActive() {
+    I.click(this.activeFilterEl());
+  },
+
+  // Expectations
+  hasTodos(todos) {
+    todos.forEach(t => I.see(t.title, this.listEl()));
+  },
+
+  doesntHaveTodos(todos) {
+    todos.forEach(t => I.dontSee(t.title, this.listEl()));
   }
 }
