@@ -1,10 +1,14 @@
 {
   "private": true,
+  "scripts": {
+    "start": "yarn run http-server"
+  },
   "dependencies": {
-    "todomvc-common": "^1.0.1",
-    "todomvc-app-css": "^2.0.1"
+    "todomvc-app-css": "^2.0.1",
+    "todomvc-common": "^1.0.1"
   },
   "devDependencies": {
+    "http-server": "^0.9.0",
     "jasmine-core": "^2.0.0"
   }
 }
