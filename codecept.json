@@ -4,8 +4,7 @@
   "output": "./output",
   "helpers": {
     "Nightmare": {
-      "url": "http://localhost:8080/",
-      "show": true
+      "url": "http://localhost:8080/"
     },
     "PageHelper": {
       "require": "helpers/page_helper.js"
