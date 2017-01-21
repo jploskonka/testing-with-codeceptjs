@@ -11,6 +11,7 @@
     "codeceptjs": "^0.4.13",
     "nightmare": "^2.9.1",
     "nightmare-upload": "^0.1.1",
+    "ps-tree": "^1.1.0",
     "tcp-port-used": "^0.1.2"
   }
 }
