@@ -17,25 +17,19 @@ class AppManager {
     this.config = Object.assign(defaultConfig, config);
   }
 
-  get command() { return `${this.config.appCommand}` }
-  get host()    { return this.config.host }
-  get port()    { return this.config.port }
-
   start(callback) {
-    console.log(`Starting app at: ${this.host}:${this.port}`);
+    console.log(`Starting app at: ${this.config.host}:${this.config.port}`);
 
-    this._app = cp.exec(this.command, { cwd: this.config.appPath });
+    this._app = cp.exec(this.config.appCommand, { cwd: this.config.appPath });
     this._waitForApp(callback);
   }
 
   _waitForApp(callback) {
     tcpPortUsed
-      .waitUntilUsedOnHost(this.port, this.host, 500, APP_TIMEOUT)
+      .waitUntilUsedOnHost(this.config.port, this.config.host, 500, APP_TIMEOUT)
       .then(() => {
         console.log(`Application started, running tests.`);
         callback();
-      }, err => {
-        console.error(err);
       });
   }
 
