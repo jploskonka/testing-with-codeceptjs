@@ -4,7 +4,7 @@
   "output": "./output",
   "helpers": {
     "Nightmare": {
-      "url": "http://todomvc.com/examples/vanillajs",
+      "url": "http://localhost:8080/",
       "show": true
     },
     "PageHelper": {
@@ -17,7 +17,8 @@
   "include": {
     "TodoList": "./pages/TodoList.js"
   },
-  "bootstrap": false,
+  "bootstrap": "./support/bootstrap.js",
+  "teardown": "./support/teardown.js",
   "mocha": {},
   "name": "acceptance-testing-with-codecept-js"
 }
