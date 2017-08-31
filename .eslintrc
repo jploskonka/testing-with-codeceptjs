@@ -4,6 +4,7 @@
     "node": true,
     "mocha": true,
     "es6": true,
+    "browser": true,
     "codeceptjs/codeceptjs": true
   },
   "plugins": [
@@ -102,7 +103,7 @@
     "no-undef-init": 2,
     "camelcase": 2,
     "comma-spacing": 2,
-    "new-cap": 2,
+    "new-cap": 0,
     "new-parens": 2,
     "no-array-constructor": 2,
     "no-extra-parens": 2,
