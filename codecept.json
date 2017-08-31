@@ -11,7 +11,7 @@
     }
   },
   "include": {
-    "TodoList": "./pages/TodoList.js"
+    "todoList": "./pages/TodoList.js"
   },
   "bootstrap": "./support/bootstrap.js",
   "teardown": "./support/teardown.js",

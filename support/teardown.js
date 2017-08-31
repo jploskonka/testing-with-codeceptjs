@@ -1,5 +1,5 @@
 const appManager = require('./appManager.js');
 
-module.exports = function() {
+module.exports = function () {
   appManager.close();
-}
+};

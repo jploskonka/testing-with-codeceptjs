@@ -17,8 +17,9 @@ module.exports = {
   todoEl(position) {
     let el = '.todo-list > li';
 
-    if(position)
+    if (position) {
       el = [el, `:nth-child(${position})`].join('');
+    }
 
     return el;
   },
@@ -27,7 +28,7 @@ module.exports = {
     return `${this.todoEl(position)} label`;
   },
 
-  todoEditEl(position) {
+  todoEditEl() {
     // There's no need to scope to todo position here because
     // it's possible to have only one todo in editing state
     return `${this.listEl()} .edit`;
@@ -55,7 +56,7 @@ module.exports = {
   },
 
   remove(position) {
-   I.click(this.todoDestroyEl(position));
+    I.click(this.todoDestroyEl(position));
   },
 
   edit(position, newContent) {
@@ -85,4 +86,4 @@ module.exports = {
   doesntHaveTodos(todos) {
     todos.forEach(t => I.dontSee(t.title, this.listEl()));
   }
-}
+};

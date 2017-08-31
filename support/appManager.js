@@ -13,29 +13,29 @@ const APP_TIMEOUT = 4000;
 
 class AppManager {
   constructor(config) {
-    this._app = null; // used to keep reference to app process
+    this.app = null; // used to keep reference to app process
     this.config = Object.assign(defaultConfig, config);
   }
 
   start(callback) {
-    console.log(`Starting app at: ${this.config.host}:${this.config.port}`);
+    console.log(`Starting app at: ${this.config.host}:${this.config.port}`); //eslint-disable-line no-console
 
-    this._app = cp.exec(this.config.appCommand, { cwd: this.config.appPath });
-    this._waitForApp(callback);
+    this.app = cp.exec(this.config.appCommand, { cwd: this.config.appPath });
+    this.waitForApp(callback);
   }
 
-  _waitForApp(callback) {
+  waitForApp(callback) {
     tcpPortUsed
       .waitUntilUsedOnHost(this.config.port, this.config.host, 500, APP_TIMEOUT)
       .then(() => {
-        console.log(`Application started, running tests.`);
+        console.log(`Application started, running tests.`); //eslint-disable-line no-console
         callback();
       });
   }
 
   close() {
-    psTree(this._app.pid, (err, children) => {
-      cp.spawn('kill', ['-9'].concat(children.map(p => p.PID)))
+    psTree(this.app.pid, (err, children) => {
+      cp.spawn('kill', ['-9'].concat(children.map(p => p.PID)));
     });
   }
 }
