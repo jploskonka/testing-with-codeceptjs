@@ -8,7 +8,7 @@ Scenario('User marks todo as done', (I, TodoList) => {
   TodoList.toggle(1);
   I.seeCheckboxIsChecked(TodoList.todoToggleEl(1));
 
-  I.refreshPage();
+  I.refresh();
   // Wait for todo to be loaded
   I.waitForElement(TodoList.todoEl(1));
   // Check toggler
@@ -22,7 +22,7 @@ Scenario('User marks todo as undone', (I, TodoList) => {
   TodoList.toggle(2);
   I.dontSeeCheckboxIsChecked(TodoList.todoToggleEl(2));
 
-  I.refreshPage();
+  I.refresh();
   // Wait for todo to be loaded
   I.waitForElement(TodoList.todoEl(2));
   // Check toggler

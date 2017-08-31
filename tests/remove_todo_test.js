@@ -15,6 +15,6 @@ Scenario('User removes todo', function* (I, TodoList) {
 
   I.dontSee(todoContent, TodoList.listEl());
 
-  I.refreshPage();
+  I.refresh();
   I.dontSee(todoContent, TodoList.listEl());
 });

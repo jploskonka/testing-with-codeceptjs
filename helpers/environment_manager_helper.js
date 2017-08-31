@@ -19,7 +19,7 @@ class EnvironmentManager extends Helper {
 
   openAndRefresh() {
     this.helpers['Nightmare'].amOnPage('/');
-    return this.helpers['PageHelper'].refreshPage();
+    return this.helpers['Nightmare'].refresh();
   }
 }
 

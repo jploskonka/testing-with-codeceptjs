@@ -5,11 +5,11 @@
   "author": "Jakub Ploskonka",
   "license": "MIT",
   "scripts": {
-    "test": "codeceptjs run . --steps"
+    "test": "codeceptjs run --steps"
   },
-  "devDependencies": {
-    "codeceptjs": "^0.4.13",
-    "nightmare": "^2.9.1",
+  "dependencies": {
+    "codeceptjs": "^1.0.2",
+    "nightmare": "^2.10.0",
     "nightmare-upload": "^0.1.1",
     "ps-tree": "^1.1.0",
     "tcp-port-used": "^0.1.2"
