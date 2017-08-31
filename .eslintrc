@@ -3,12 +3,16 @@
   "env": {
     "node": true,
     "mocha": true,
-    "es6": true
+    "es6": true,
+    "codeceptjs/codeceptjs": true
   },
   "ecmaFeatures": {
     "jsx": true,
     "modules": true
   },
+  "plugins": [
+    "codeceptjs"
+  ],
   "rules": {
     "array-bracket-spacing": [
       2,
