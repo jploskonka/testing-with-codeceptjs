@@ -5,7 +5,8 @@
   "author": "Jakub Ploskonka",
   "license": "MIT",
   "scripts": {
-    "test": "codeceptjs run --steps"
+    "test": "codeceptjs run --steps",
+    "lint": "eslint . --ignore-path .gitignore"
   },
   "dependencies": {
     "codeceptjs": "^1.0.2",
