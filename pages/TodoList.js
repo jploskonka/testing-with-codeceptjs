@@ -43,7 +43,7 @@ module.exports = {
 
   // Content getters
   getTodoCount: function* () {
-    return yield I.executeScript(el => {
+    return yield I.executeAsyncScript(el => {
       return document.querySelectorAll(el).length;
     }, this.todoEl());
   },
