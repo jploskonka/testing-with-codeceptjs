@@ -11,6 +11,7 @@
   "dependencies": {
     "codeceptjs": "^1.0.2",
     "eslint": "^4.5.0",
+    "eslint-plugin-codeceptjs": "^0.2.0",
     "nightmare": "^2.10.0",
     "nightmare-upload": "^0.1.1",
     "ps-tree": "^1.1.0",
