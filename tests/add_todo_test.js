@@ -15,6 +15,6 @@ Scenario('User adds a new todo', function* (I, TodoList) {
 
   I.see(todoContent, lastTodo);
 
-  I.refreshPage();
+  I.refresh();
   I.waitForText(todoContent, 1, lastTodo);
 });
