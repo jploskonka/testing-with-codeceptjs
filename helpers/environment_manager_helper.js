@@ -9,17 +9,17 @@ function setTodos(todos, storageKey, done) {
   done();
 }
 
-class EnvironmentManager extends Helper {
+class EnvironmentManager extends Helper { // eslint-disable-line no-undef
   _before() {
-    this.helpers['Nightmare']
+    this.helpers.Nightmare
       .executeAsyncScript(setTodos, TODOS, STORAGE_KEY);
 
     return this.openAndRefresh();
   }
 
   openAndRefresh() {
-    this.helpers['Nightmare'].amOnPage('/');
-    return this.helpers['Nightmare'].refresh();
+    this.helpers.Nightmare.amOnPage('/');
+    return this.helpers.Nightmare.refresh();
   }
 }
 

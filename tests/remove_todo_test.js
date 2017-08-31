@@ -4,17 +4,17 @@ Feature('Remove todo');
 
 const TODOS = require('../fixtures/todos.js').todos;
 
-Scenario('User removes todo', function* (I, TodoList) {
+Scenario('User removes todo', function* (I, todoList) {
   const todoContent = TODOS[0].title;
-  const todoCount = yield* TodoList.getTodoCount();
+  const todoCount = yield* todoList.getTodoCount();
 
-  TodoList.remove(1);
+  todoList.remove(1);
 
-  const newTodoCount = yield* TodoList.getTodoCount();
+  const newTodoCount = yield* todoList.getTodoCount();
   assert.equal(newTodoCount, todoCount - 1);
 
-  I.dontSee(todoContent, TodoList.listEl());
+  I.dontSee(todoContent, todoList.listEl());
 
   I.refresh();
-  I.dontSee(todoContent, TodoList.listEl());
+  I.dontSee(todoContent, todoList.listEl());
 });
