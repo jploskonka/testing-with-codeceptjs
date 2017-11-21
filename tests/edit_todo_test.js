@@ -1,6 +1,6 @@
 Feature('Edit todo');
 
-const TODOS = require('../fixtures/todos.js').todos;
+const TODOS = require('../fixtures/todos.json').todos;
 
 Scenario('User edits todo', (I, todoList) => {
   const oldContent = TODOS[0].title;

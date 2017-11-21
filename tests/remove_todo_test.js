@@ -2,7 +2,7 @@ const assert = require('assert');
 
 Feature('Remove todo');
 
-const TODOS = require('../fixtures/todos.js').todos;
+const TODOS = require('../fixtures/todos.json').todos;
 
 Scenario('User removes todo', function* (I, todoList) {
   const todoContent = TODOS[0].title;

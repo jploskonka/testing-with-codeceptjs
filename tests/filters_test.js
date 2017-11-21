@@ -1,6 +1,6 @@
 Feature('Filters');
 
-const TODOS = require('../fixtures/todos.js').todos;
+const TODOS = require('../fixtures/todos.json').todos;
 const TODOS_ACTIVE = TODOS.filter(t => !t.completed);
 const TODOS_COMPLETED = TODOS.filter(t => t.completed);
 
