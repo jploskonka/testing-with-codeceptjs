@@ -5,7 +5,7 @@ const psTree = require('ps-tree');
 const defaultConfig = {
   host: 'localhost',
   port: 8080,
-  appPath: './vanillajs/',
+  appPath: '../app/',
   appCommand: 'yarn run start'
 };
 
