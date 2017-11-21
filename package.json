@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "test": "cd test && codeceptjs run --steps",
-    "lint": "eslint . --ignore-path .gitignore"
+    "lint:test": "eslint test --ignore-path .gitignore"
   },
   "dependencies": {
     "codeceptjs": "^1.0.2",
