@@ -1,12 +1,12 @@
 const cp = require('child_process');
 const tcpPortUsed = require('tcp-port-used');
 const psTree = require('ps-tree');
+const path = require('path');
 
 const defaultConfig = {
   host: 'localhost',
   port: 8080,
-  appPath: '../app/',
-  appCommand: 'yarn run start'
+  appCommand: 'yarn app'
 };
 
 const APP_TIMEOUT = 4000;
@@ -20,7 +20,7 @@ class AppManager {
   start(callback) {
     console.log(`Starting app at: ${this.config.host}:${this.config.port}`); //eslint-disable-line no-console
 
-    this.app = cp.exec(this.config.appCommand, { cwd: this.config.appPath });
+    this.app = cp.exec(this.config.appCommand);
     this.waitForApp(callback);
   }
 
@@ -35,7 +35,9 @@ class AppManager {
 
   close() {
     psTree(this.app.pid, (err, children) => {
-      cp.spawn('kill', ['-9'].concat(children.map(p => p.PID)));
+      const pids = children.map(p => p.PID);
+
+      cp.spawn('kill', ['-9'].concat(pids));
     });
   }
 }
