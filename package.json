@@ -1,6 +1,6 @@
 {
   "name": "acceptance-testing-with-codecept-js",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "Sample testing suite created with http://codenroll.it/acceptance-testing-with-codecept-js/ tutorial",
   "author": "Jakub Ploskonka",
   "license": "MIT",
