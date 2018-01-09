@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: codeception/codeceptjs
+
+    steps:
+      - checkout
+      - run: yarn install
+      - run: xvfb-run yarn test
