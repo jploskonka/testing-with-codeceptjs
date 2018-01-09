@@ -14,7 +14,6 @@
     "todoList": "./pages/TodoList.js"
   },
   "bootstrap": "./support/bootstrap.js",
-  "teardown": "./support/teardown.js",
   "mocha": {},
   "name": "acceptance-testing-with-codecept-js"
 }
