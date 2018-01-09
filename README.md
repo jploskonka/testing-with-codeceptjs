@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/jploskonka/testing-with-codeceptjs.svg?style=svg)](https://circleci.com/gh/jploskonka/testing-with-codeceptjs)
+
 # CodeceptJS & TodoMVC
 This is a sample application created for [acceptance testing with
 CodeceptJS](http://codenroll.it/acceptance-testing-with-codecept-js/)
