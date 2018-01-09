@@ -236,9 +236,9 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
-codecept.app-runner@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/codecept.app-runner/-/codecept.app-runner-1.0.0.tgz#8a2c2ed71c80ce9418f5250a63874f575d463e6c"
+codecept.app-runner@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/codecept.app-runner/-/codecept.app-runner-1.1.1.tgz#dd6e6d077ac31ac0d18f466ea4b9c727cee7fe80"
   dependencies:
     ps-tree "^1.1.0"
     tcp-port-used "^0.1.2"
