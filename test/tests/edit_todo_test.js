@@ -12,6 +12,6 @@ Scenario('User edits todo', (I, todoList) => {
   I.dontSee(oldContent, context);
   I.see(newContent, context);
 
-  I.refresh();
+  I.refreshPage();
   I.waitForText(newContent, 1, context);
 });

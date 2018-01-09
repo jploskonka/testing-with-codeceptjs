@@ -38,7 +38,7 @@ class EnvironmentManager extends Helper {
     // Because of it we can't populate local storage before opening
     // page but TodoMVC loads content on page load. So I have to refresh
     // my page after filling up local storage.
-    return this.helpers.Nightmare.refresh();
+    return this.helpers.Nightmare.refreshPage();
   }
 }
 
